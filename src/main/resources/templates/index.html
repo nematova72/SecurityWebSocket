@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<h1>WebSocket</h1>
+<h1>WebSocket </h1>
 </body>
 </html>
+<script scr="/webjars/sockjs-client/sockjs.min.js"></script>
+<script scr="/webjars/stomp-websocket/stomp.min.js"></script>
+<script >
+    var socket = new SockJS("/websocket-connection");
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+      console.log("Success connection")
+    })
+</script>
